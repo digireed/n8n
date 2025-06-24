@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: free
+    branch: master
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: securepassword
+      - key: N8N_HOST
+        value: digireed-n8n.onrender.com
+      - key: WEBHOOK_URL
+        value: https://digireed-n8n.onrender.com/
+      - key: N8N_PROTOCOL
+        value: https
